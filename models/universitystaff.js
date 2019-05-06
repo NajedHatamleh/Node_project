@@ -26,16 +26,9 @@ const UniStaffSchema = new Schema ({
         type: String,
         required: true
     },
-    availableHours: [{
-        hours: Number
-        }],
-    order: [{
-        id: String
-    }],
-    orderHistory: [{
-        id: String
-    }]    
-
+    availableHours: [Number],
+    order: [mongoose.Types.ObjectId],
+    orderHistory: [mongoose.Types.ObjectId]
 });
 
 module.exports = mongoose.model('UniStaff', UniStaffSchema);

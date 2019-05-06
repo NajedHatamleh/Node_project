@@ -23,12 +23,8 @@ const ManagerSchema = new Schema ({
         type: String,
         required: true
     },
-    orders: [{
-        id: String
-    }],
-    orderHistory: [{
-        id: String
-    }]  
+    orders: [mongoose.Types.ObjectId],
+    orderHistory: [mongoose.Types.ObjectId]  
 });
 
 module.exports = mongoose.model('Manager', ManagerSchema);

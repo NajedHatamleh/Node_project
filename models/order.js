@@ -50,9 +50,7 @@ const OrderSchema = new Schema({
         type: String,
         required = true
     },
-    Devices: [{
-        id: String
-    }]
+    Devices: [mongoose.Types.ObjectId]
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
