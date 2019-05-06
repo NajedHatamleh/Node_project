@@ -1,15 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const errorController = require('./controllers/error');
-const mongoConnect = require('./util/database').mongoConnect;
+
 
 const app = express();
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   // User.findById(1)
@@ -26,6 +27,10 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoConnect(() => {
-  app.listen(3000);
+mongoose.connect('mongodb+srv://Nejed:Najed1992@graduationc-p9i0a.mongodb.net/test?retryWrites=true')
+  .then(result => {
+    app.listen(3000);
+    console.log('Connected');
+  }).catch(err => {
+    console.log(err);
 });
