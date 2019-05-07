@@ -20,6 +20,8 @@ const ProductSchema = new Schema ({
     type: String,
     required: true
   }
+}, {
+  timestamps: true
 });
 
   // save() {

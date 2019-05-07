@@ -6,13 +6,10 @@ const OrderSchema = new Schema({
     orderId: {
         type: String,
         required: true,
+        unique: true
     },
     type: {
         type: String,
-        required: true
-    },
-    dateCreated: {
-        type: Date,
         required: true
     },
     dueDate: {
@@ -43,14 +40,16 @@ const OrderSchema = new Schema({
         type: Boolean,
         required: false
     },
-    hardwareParts: [{
-        part: String
-    }],
+    // hardwareParts: [{
+    //     part: String
+    // }],
     requestedPartDesc: {
         type: String,
         required = true
     },
     Devices: [mongoose.Types.ObjectId]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Order', OrderSchema);

@@ -4,11 +4,12 @@ const Schema = mongoose.Schema;
 const UniStaffSchema = new Schema ({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     staffId: {
         type: String,
         required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -29,6 +30,8 @@ const UniStaffSchema = new Schema ({
     availableHours: [Number],
     order: [mongoose.Types.ObjectId],
     orderHistory: [mongoose.Types.ObjectId]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('UniStaff', UniStaffSchema);

@@ -1,6 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
+//const fileStore = require('session-file-store');
 
 const errorController = require('./controllers/error');
 
@@ -10,7 +14,9 @@ const app = express();
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
+
 app.use(bodyParser.json());
+app.use(cookieParser('12345-2112'));
 
 app.use((req, res, next) => {
   // User.findById(1)

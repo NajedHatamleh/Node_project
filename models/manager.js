@@ -10,6 +10,7 @@ const ManagerSchema = new Schema ({
     managerId: {
         type: String,
         required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -25,6 +26,8 @@ const ManagerSchema = new Schema ({
     },
     orders: [mongoose.Types.ObjectId],
     orderHistory: [mongoose.Types.ObjectId]  
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Manager', ManagerSchema);

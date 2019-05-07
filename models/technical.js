@@ -9,6 +9,7 @@ const TechnicalSchema = new Schema ({
     TechId: {
         type: String,
         required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -36,6 +37,8 @@ const TechnicalSchema = new Schema ({
     },
     orders: [mongoose.Types.ObjectId],
     orderHistory: [mongoose.Types.ObjectId]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Technical', TechnicalSchema);
