@@ -11,6 +11,8 @@ const errorController = require('./controllers/error');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
@@ -33,7 +35,7 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoose.connect('mongodb+srv://Nejed:Najed1992@graduationc-p9i0a.mongodb.net/test?retryWrites=true')
+mongoose.connect('mongodb+srv://PGdb:Yq6hmrDY7bBJ2A@pg-ihylj.mongodb.net/test?retryWrites=true', {useNewUrlParser: true})
   .then(result => {
     app.listen(3000);
     console.log('Connected');
