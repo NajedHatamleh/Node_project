@@ -7,7 +7,7 @@ const ManagerSchema = new Schema ({
         type: String,
         required: true,
     },
-    managerId: {
+    id: {
         type: String,
         required: true,
         unique: true

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const OrderSchema = new Schema({
-    orderId: {
+    Id: {
         type: String,
         required: true,
         unique: true
@@ -47,7 +47,10 @@ const OrderSchema = new Schema({
         type: String,
         required = true
     },
-    Devices: [mongoose.Types.ObjectId]
+    Device: {
+        type: mongoose.Types.ObjectId,
+        required: false
+    },
 }, {
     timestamps: true
 });

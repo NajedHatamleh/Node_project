@@ -6,7 +6,7 @@ const UniStaffSchema = new Schema ({
         type: String,
         required: true
     },
-    staffId: {
+    id: {
         type: String,
         required: true,
         unique: true

@@ -6,7 +6,7 @@ const TechnicalSchema = new Schema ({
         type: String,
         required: true,
     },
-    TechId: {
+    id: {
         type: String,
         required: true,
         unique: true
